@@ -1,14 +1,5 @@
 class VehiclesController < ApplicationController
-  before_action :set_vehicle, only: [:show, :destroy]
-
-  def index
-    @vehicles = Vehicle.all
-    render json: @vehicles.as_json(include: :location, root: true)
-  end
-
-  def show
-    render json: @vehicle.as_json(include: :location, root: true)
-  end
+  before_action :set_vehicle, only: [:destroy]
 
   def create
     @vehicle = Vehicle.new(vehicle_params)
@@ -20,7 +11,7 @@ class VehiclesController < ApplicationController
   end
 
   def destroy
-    @vehicle.destroy
+    @vehicle.archive
   end
 
   private
