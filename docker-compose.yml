@@ -6,7 +6,7 @@ services:
     ports:
       - "27017:27017"
   back_end:
-    image: door2door_back_end:1.0
+    image: reuwsaat/door2door_back_end:1.0
     command: bash -c "rm -rf tmp/pids/server.pid && bundle install && rails db:drop && rails db:create && rails s -p 3000 -b '0.0.0.0'"
     volumes:
       - ./back_end:/app
@@ -15,14 +15,14 @@ services:
     depends_on:
       - db
   front_end:
-    image: door2door_front_end:1.0
+    image: reuwsaat/door2door_front_end:1.0
     command: npm start
     volumes:
       - ./front_end/door2door_front_end:/app
     ports:
       - "3001:3001"
   simulator:
-    image: door2door_simulator:1.0
+    image: reuwsaat/door2door_simulator:1.0
     command: sh -c "./wait-for-it.sh back_end:3000 -t 0 -- yarn install && yarn start back_end:3000"
     depends_on:
       - back_end
