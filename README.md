@@ -17,9 +17,10 @@
 
 Design decisions available on the Wiki!
 
-To run this project, run:
+To run this project, first run: `docker-compose up front_end`
+so that it downloads all of its dependencies beforehand
 
-`docker-compose up`
+Then run: `docker-compose up`
 
 door2door, the operator of the 'allygator shuttle' service in Berlin, collects the live position of all vehicles in its fleet in real-time via a GPS sensor in each vehicle. To manage the service, door2door needs to be able to visualize the location and bearing of all vehicles in real-time, and has asked you to provide a solution for this.
 
