@@ -1,6 +1,11 @@
 class VehiclesController < ApplicationController
   before_action :set_vehicle, only: [:destroy]
 
+  def index
+    @vehicles = Vehicle.with_location
+    render json: @vehicles.as_json(include: :location, root: true)
+  end
+
   def create
     @vehicle = Vehicle.new(vehicle_params)
     if @vehicle.save

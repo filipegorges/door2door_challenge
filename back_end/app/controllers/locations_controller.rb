@@ -1,11 +1,6 @@
 class LocationsController < ApplicationController
   before_action :set_vehicle, only: [:create]
 
-  def index
-    @locations = Location.all
-    render json: @locations.as_json(include: :vehicle, root: true)
-  end
-
   def create
     @vehicle.location = Location.new(location_params)
     if @vehicle.save

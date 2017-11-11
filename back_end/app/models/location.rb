@@ -4,6 +4,7 @@ class Location
   field :lng, type: BigDecimal
   field :at, type: DateTime
   belongs_to :vehicle
+ 
   validate :within_city_boundary
 
   private

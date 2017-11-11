@@ -5,19 +5,12 @@ RSpec.describe LocationsController, type: :controller do
 
   let(:vehicle) { Vehicle.create! }
 
-  let(:valid_attributes) {
-    { vehicle_id: vehicle.id, "lat": 10.0, "lng": 20.0,
-      "at": "2017-09-01T12:00:00Z" }
+  let(:valid_attributes) { { vehicle_id: vehicle.id.to_s, 
+    location: { 
+      vehicle_id: vehicle.id.to_s, "lat": 10.0, "lng": 20.0,
+      "at": "2017-09-01T12:00:00Z" } 
+    }
   }
-
-  let(:invalid_attributes) {{ vehicle_id: nil, "lat": "", "lng": "", "at": "" }}
-
-  describe "GET #index" do
-    it "returns a success response" do
-      get :index, params: {}
-      expect(response).to be_success
-    end
-  end
 
   describe 'POST #create' do
     context 'Location update' do

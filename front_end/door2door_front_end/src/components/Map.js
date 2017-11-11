@@ -23,7 +23,7 @@ class Map extends React.Component {
 	}
 	
 	fetchVehicleLocationsFromApi() {
-		const url = `http://localhost:3000/locations`
+		const url = `http://localhost:3000/vehicles`
 		
 		fetch(url)
 		.then(res => res.json())
@@ -48,8 +48,8 @@ class Map extends React.Component {
 					>
 					{this.state.markers.map(marker => (
 						<Marker
-							key={marker.location.vehicle_id}
-							position={{ lat: parseFloat(marker.location.lat), lng: parseFloat(marker.location.lng) }}
+							key={marker.vehicle.id}
+							position={{ lat: parseFloat(marker.vehicle.location.lat), lng: parseFloat(marker.vehicle.location.lng) }}
 							/>
 					))}
 				</MarkerClusterer>

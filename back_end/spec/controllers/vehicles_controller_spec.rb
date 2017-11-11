@@ -5,6 +5,13 @@ RSpec.describe VehiclesController, type: :controller do
 
   let(:valid_attributes) { { id: SecureRandom.uuid } }
 
+  describe "GET #index" do
+    it "returns a success response" do
+      get :index, params: {}
+      expect(response).to be_success
+    end
+  end
+
   describe "POST #create" do
     context "Vehicle registration" do
       it "register a vehicle" do
@@ -30,7 +37,7 @@ RSpec.describe VehiclesController, type: :controller do
       it "de-register vehicle" do
         expect {
           delete :destroy, params: {id: @vehicle.to_param}
-        }.to change(Vehicle, :count).by(0)
+        }.to change(Vehicle, :count).by(-1)
       end
 
       it "has status code 204 and empty reponse body" do

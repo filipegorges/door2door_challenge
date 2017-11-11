@@ -30,8 +30,6 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # rspec-rails is a testing framework for Rails 3+.
   gem 'rspec-rails', '~> 3.7', '>= 3.7.1'
-  # factory_bot_rails provides integration between factory_bot and rails 3 or newer (currently just automatic factory definition loading)
-  gem 'factory_bot_rails', '~> 4.8', '>= 4.8.2'
   # Strategies for cleaning databases. Can be used to ensure a clean state for testing.
   gem 'database_cleaner', '~> 1.5', '>= 1.5.3'
 end
