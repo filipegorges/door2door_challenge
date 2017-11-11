@@ -16,7 +16,7 @@ services:
       - db
   front_end:
     image: reuwsaat/door2door_front_end:1.0
-    command: npm start
+    command: bash -c "npm add && npm start"
     volumes:
       - ./front_end/door2door_front_end:/app
     ports:
