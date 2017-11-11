@@ -1,5 +1,26 @@
 # Full-stack code challenge
 
+## Requirements
+
+- [x] Vehicle registration
+- [x] Vehicle location update
+- [x] Vehicle de-registration
+- [x] Ignore location updates outside city boundaries
+- [x] Archive valid vehicle locations
+- [x] Implemented the API in Ruby on Rails 5.1 API
+- [x] Solution is able to handle the simulation tool's load
+
+## Optionals
+- [x] Project is containerized
+- [ ] Solution is able to handle 1000+ vehicles
+- [ ] Cloud hosting
+
+Design decisions available on the Wiki!
+
+To run this project, run:
+
+`docker-compose up`
+
 door2door, the operator of the 'allygator shuttle' service in Berlin, collects the live position of all vehicles in its fleet in real-time via a GPS sensor in each vehicle. To manage the service, door2door needs to be able to visualize the location and bearing of all vehicles in real-time, and has asked you to provide a solution for this.
 
 To aid you in development of this solution, door2door has provided a tool which will simulate the registration and GPS emissions from their vehicles.
