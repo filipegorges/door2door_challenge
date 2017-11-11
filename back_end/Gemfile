@@ -4,8 +4,7 @@ git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
   "https://github.com/#{repo_name}.git"
 end
-# A plugin for versioning Rails based RESTful APIs.
-gem 'versionist', '~> 1.6', '>= 1.6.1'
+
 # Mongoid is an ODM (Object Document Mapper) Framework for MongoDB, written in Ruby.
 gem 'mongoid'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
