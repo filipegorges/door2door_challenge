@@ -39,7 +39,7 @@ class Map extends React.Component {
 				loadingElement={<div style={{ height: `100%` }} />}
 				containerElement={<div style={{ height: `60rem` }} />}
 				mapElement={<div style={{ height: `100%` }} />}
-				defaultZoom={11}
+				defaultZoom={13}
 				defaultCenter={{ lat: 52.53, lng: 13.403 }}>
 				<MarkerClusterer
 					averageCenter
